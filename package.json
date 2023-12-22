@@ -1,6 +1,6 @@
 {
   "name": "@iamaeron/qwik-nprogress",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Create a reusable Qwik component library",
   "main": "./lib/index.qwik.mjs",
   "qwik": "./lib/index.qwik.mjs",
@@ -30,6 +30,7 @@
     "fmt": "prettier --write .",
     "fmt.check": "prettier --check .",
     "lint": "eslint \"src/**/*.ts*\"",
+    "publish": "npm publish --access public",
     "release": "np",
     "start": "vite --open --mode ssr",
     "test": "echo \"No test specified\" && exit 0",
