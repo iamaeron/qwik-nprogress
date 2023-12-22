@@ -1,47 +1,65 @@
-# Qwik Library ⚡️
+# Qwik NProgress
 
-- [Qwik Docs](https://qwik.builder.io/)
-- [Discord](https://qwik.builder.io/chat)
-- [Qwik on GitHub](https://github.com/BuilderIO/qwik)
-- [@QwikDev](https://twitter.com/QwikDev)
-- [Vite](https://vitejs.dev/)
-- [Partytown](https://partytown.builder.io/)
-- [Mitosis](https://github.com/BuilderIO/mitosis)
-- [Builder.io](https://www.builder.io/)
+Qwik wrapper of [NProgress](https://github.com/rstacruz/nprogress) for Qwik City.
 
----
+## Installation
 
-## Project Structure
+Use your preferred package manager, but this snippet uses [pnpm](https://pnpm.io):
 
-Inside your project, you'll see the following directories and files:
-
-```
-├── public/
-│   └── ...
-└── src/
-    ├── components/
-    │   └── ...
-    └── index.ts
+```bash
+pnpm add @iamaeron/qwik-nprogress
 ```
 
-- `src/components`: Recommended directory for components.
+## Usage
 
-- `index.ts`: The entry point of your component library, make sure all the public components are exported from this file.
+It is suggested to add the component in your layout file like `src/routes/layout.tsx` so that the progress bar will show on any route/url changes.
 
-## Development
+```jsx
+import { QwikNProgress } from '@iamaeron/qwik-nprogress'
+import { Slot } from 'builder.io/qwik'
 
-Development mode uses [Vite's development server](https://vitejs.dev/). For Qwik during development, the `dev` command will also server-side render (SSR) the output. The client-side development modules are loaded by the browser.
+export default component$(() => {
 
+  return (
+    <>
+      <QwikNProgress />
+      <Slot />
+    </>
+  );
+});
 ```
-pnpm dev
+
+## Customization
+
+`<QwikNProgress />` provides an `option` prop to change your [NProgress settings](https://github.com/rstacruz/nprogress#configuration). Additionally, you can tweak the bar's width and height, the spinner's size and thickness, and their color.
+
+### Example:
+
+```jsx
+<QwikNProgress 
+    options={{
+        // ... nprogress settings,
+        color: '#ef4444',
+        height: 4,
+        spinner: {
+            size: 20,
+            thickness: 4
+        }
+    }}
+/>
 ```
 
-> Note: during dev mode, Vite will request many JS files, which does not represent a Qwik production build.
+### Options
 
-## Production
-
-The production build should generate the production build of your component library in (./lib) and the typescript type definitions in (./lib-types).
-
-```
-pnpm build
-```
+#### `color`
+- allows you to change the bar's, and spinner color.
+- *default* - **#29d**
+#### `height` 
+- allows you to change the bar's height.
+- *default* - **2px**
+#### `spinner.size` 
+- allows you to change the spinner's size (width/height).
+- *default* - **18px**
+#### `spinner.thickness` 
+- **allows you to change the spinner's thickness.**
+- *default* - **2px**
