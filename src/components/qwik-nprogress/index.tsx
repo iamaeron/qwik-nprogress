@@ -21,7 +21,6 @@ export const QwikNProgress = component$<QwikNProgressProps>(({ option = {} }) =>
   const loc = useLocation()
   
   useStyles$(styles);
-
   
   // eslint-disable-next-line qwik/no-use-visible-task
   useVisibleTask$(({ track }) => {
