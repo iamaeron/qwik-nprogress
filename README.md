@@ -1,6 +1,6 @@
 # Qwik NProgress
 
-Qwik wrapper of [NProgress](https://github.com/rstacruz/nprogress) for Qwik City.
+Qwik component of [NProgress](https://github.com/rstacruz/nprogress) for Qwik City.
 
 ## Installation
 
