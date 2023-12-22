@@ -5,7 +5,7 @@ import styles from './index.css?inline'
 import { useLocation } from '@builder.io/qwik-city'
 
 interface QwikNProgressProps {
-  option: Partial<
+  option?: Partial<
     NProgressOptions & {
       color: string;
       height: number;
