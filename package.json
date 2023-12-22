@@ -1,6 +1,6 @@
 {
   "name": "@iamaeron/qwik-nprogress",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Create a reusable Qwik component library",
   "main": "./lib/index.qwik.mjs",
   "qwik": "./lib/index.qwik.mjs",
@@ -27,6 +27,7 @@
     "build.types": "tsc --emitDeclarationOnly",
     "dev": "vite --mode ssr",
     "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
+    "publish": "pnpm build && npm publish --access public",
     "fmt": "prettier --write .",
     "fmt.check": "prettier --check .",
     "lint": "eslint \"src/**/*.ts*\"",

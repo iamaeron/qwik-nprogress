@@ -22,11 +22,12 @@ export const QwikNProgress = component$<QwikNProgressProps>(({ option = {} }) =>
   
   useStyles$(styles);
 
-  NProgress.configure(option)
-
+  
   // eslint-disable-next-line qwik/no-use-visible-task
   useVisibleTask$(({ track }) => {
     const navigating = track(() => loc.isNavigating)
+    
+    NProgress.configure(option)
 
     navigating ? NProgress.start() : NProgress.done()
   })
