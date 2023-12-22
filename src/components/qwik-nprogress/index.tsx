@@ -35,11 +35,13 @@ export const QwikNProgress = component$<QwikNProgressProps>(({ option = {} }) =>
   return (
     <style
       dangerouslySetInnerHTML={`
-      --qwik-np-color: ${option.color ?? "#29d"};
-      --qwik-np-height: ${option.height ?? 2}px;
-      --qwik-np-spinner-width: ${option.spinner?.size ? option.spinner.size : 18}px;
-      --qwik-np-spinner-height: ${option.spinner?.size ? option.spinner.size : 18}px;
-      --qwik-np-spinner-thickness: ${option.spinner?.thickness ? option.spinner.thickness : 2}px;
+      :root {
+        --qwik-np-color: ${option.color ?? "#29d"};
+        --qwik-np-height: ${option.height ?? 2}px;
+        --qwik-np-spinner-width: ${option.spinner?.size ? option.spinner.size : 18}px;
+        --qwik-np-spinner-height: ${option.spinner?.size ? option.spinner.size : 18}px;
+        --qwik-np-spinner-thickness: ${option.spinner?.thickness ? option.spinner.thickness : 2}px;
+      }
   `}
     ></style>
   );
