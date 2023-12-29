@@ -1,6 +1,6 @@
 import { component$, useStyles$, useVisibleTask$ } from "@builder.io/qwik";
 import type { NProgressOptions } from "nprogress";
-import NProgress from "nprogress";
+import * as NProgress from "nprogress";
 import { useLocation } from "@builder.io/qwik-city";
 
 interface QwikNProgressProps {
