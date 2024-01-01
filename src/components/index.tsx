@@ -1,20 +1,7 @@
 import { component$, useStyles$, useVisibleTask$ } from "@builder.io/qwik";
-import type { NProgressOptions } from "nprogress";
 import { configure, done, start } from "nprogress";
 import { useLocation } from "@builder.io/qwik-city";
-
-interface QwikNProgressProps {
-  option?: Partial<
-    NProgressOptions & {
-      color: string;
-      height: number;
-      spinner: {
-        size: number;
-        thickness: number;
-      };
-    }
-  >;
-}
+import { type QwikNProgressProps } from "./types";
 
 export const QwikNProgress = component$<QwikNProgressProps>(
   ({ option = {} }) => {

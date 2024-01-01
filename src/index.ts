@@ -1,1 +1,1 @@
-export { QwikNProgress } from "./components/qwik-nprogress";
+export { QwikNProgress } from "./components";
