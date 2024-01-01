@@ -36,7 +36,7 @@ export default component$(() => {
 
 ```jsx
 <QwikNProgress
-  options={{
+  option={{
     // ... nprogress settings,
     color: "#ef4444",
     height: 4,
