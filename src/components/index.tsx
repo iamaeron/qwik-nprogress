@@ -1,5 +1,5 @@
 import { component$, useStyles$, useVisibleTask$ } from "@builder.io/qwik";
-import { configure, done, start } from "nprogress";
+import NProgress from "nprogress";
 import { useLocation } from "@builder.io/qwik-city";
 import { type QwikNProgressProps } from "./types";
 
@@ -86,9 +86,9 @@ export const QwikNProgress = component$<QwikNProgressProps>(
     useVisibleTask$(({ track }) => {
       const navigating = track(() => loc.isNavigating);
 
-      configure(option);
+      NProgress.configure(option);
 
-      navigating ? start() : done();
+      navigating ? NProgress.start() : NProgress.done();
     });
 
     return (
