@@ -69,3 +69,17 @@ export default component$(() => {
 
 - **allows you to change the spinner's thickness.**
 - _default_ - **2px**
+
+## Error
+
+Maybe you encountered an error that looks something like this `The requested module '/node_modules/.pnpm/nprogress@0.2.0/node_modules/nprogress/nprogress.js?v=54304530' does not provide an export named 'default'`. This frustrated me for like.. 2 days. But the solution is simple, all you need to do is add `nprogress` to the `optimizeDeps.include` in your `vite.config.ts`
+
+```js
+export default defineConfig(() => {
+  return {
+    optimizeDeps: {
+      include: ['nprogress']
+    },
+    // .. yaba yaba yaba
+});
+```
